@@ -1,5 +1,6 @@
 package com.example.ruchadapong.projectapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -82,6 +83,11 @@ public class RegisterFragment extends Fragment {
     }
 
     private void uploadAvatar() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setTitle("อัพโหลดข้อมูลของท่าน");
+        progressDialog.setMessage("โปรดรอสักครู่...");
+        progressDialog.show();
 
 
 
