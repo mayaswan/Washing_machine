@@ -12,8 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ public class RegisterFragment extends Fragment {
     private ImageView imageView;
     private Uri uri;
     private boolean aBoolean = true;
+    private String nameString,emailString,passwordString;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -35,6 +38,51 @@ public class RegisterFragment extends Fragment {
         // Avatar Controller
         
         avatarController();
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.itemUpload) {
+
+            checkUpload();
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void checkUpload() {
+
+        MyAlert myAlert = new MyAlert(getActivity());
+
+        EditText nameEditText = getView().findViewById(R.id.edtName);
+        EditText emailEditText = getView().findViewById(R.id.edtEmail);
+        EditText passwordEditText = getView().findViewById(R.id.edtPassword);
+
+        nameString = nameEditText.getText().toString().trim();
+        emailString = emailEditText.getText().toString().trim();
+        passwordString = passwordEditText.getText().toString().trim();
+
+        if (aBoolean) {
+
+            myAlert.normalDialog("ยังไม่มีการเลือกรูปภาพ","กรุณาเลือกรูปภาพของท่าน");
+
+        } else if (nameString.isEmpty() || emailString.isEmpty() || passwordString.isEmpty()) {
+
+            myAlert.normalDialog("ข้อมูลของท่านยังไม่ครบถ้วน","กรุณากรอกข้อมูลของท่านให้ครบถ้วน");
+
+        }else {
+
+            uploadAvatar();
+        }
+
+    }
+
+    private void uploadAvatar() {
+
 
 
     }
