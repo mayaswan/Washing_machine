@@ -20,6 +20,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.FileNotFoundException;
 
 public class RegisterFragment extends Fragment {
@@ -89,8 +95,30 @@ public class RegisterFragment extends Fragment {
         progressDialog.setMessage("โปรดรอสักครู่...");
         progressDialog.show();
 
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageReference = firebaseStorage.getReference();
+        StorageReference storageReference1 = storageReference.child("Avatar/" + nameString);
+        storageReference1.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(getActivity(),"อัพโหลดข้อมูลของท่านเสร็จสมบูรณ์",Toast.LENGTH_SHORT).show();
+
+                progressDialog.dismiss();
+
+                registerEmail();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(),"ไม่สามารถอัพโหลดได้ ==> " + e.toString(),Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+            }
+        });
 
 
+    }
+
+    private void registerEmail() {
     }
 
     @Override
