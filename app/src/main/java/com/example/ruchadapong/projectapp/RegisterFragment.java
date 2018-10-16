@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,8 +21,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -47,7 +52,7 @@ public class RegisterFragment extends Fragment {
         avatarController();
 
 
-    }
+    } //Main Method
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -78,15 +83,15 @@ public class RegisterFragment extends Fragment {
             myAlert.normalDialog("ยังไม่มีการเลือกรูปภาพ","กรุณาเลือกรูปภาพของท่าน");
 
         } else if (nameString.isEmpty() || emailString.isEmpty() || passwordString.isEmpty()) {
-
+            // มีช่องว่าง
             myAlert.normalDialog("ข้อมูลของท่านยังไม่ครบถ้วน","กรุณากรอกข้อมูลของท่านให้ครบถ้วน");
 
         }else {
-
+            // ไม่มีช่องว่าง
             uploadAvatar();
         }
 
-    }
+    } //checkUpload
 
     private void uploadAvatar() {
 
@@ -119,6 +124,73 @@ public class RegisterFragment extends Fragment {
     }
 
     private void registerEmail() {
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.createUserWithEmailAndPassword(emailString,passwordString)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()){
+                            //success
+                            updateDatabase();
+                        }else {
+
+                            //Non success
+                            MyAlert myAlert = new MyAlert(getActivity());
+                            myAlert.normalDialog("สมัครสมาชิกไม่สำเร็จ",task.getException().getMessage());
+                        }
+                    }
+                });
+
+    } // registerEmail
+
+    private void updateDatabase() {
+
+        //Find UID
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        final String uidString = firebaseAuth.getUid();
+        Log.d("16Oct61","uid ==> " + uidString);
+
+        //Find URL of Avatar
+        final String urlAvatarString = null;
+        try {
+
+            FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+            StorageReference storageReference = firebaseStorage.getReference();
+
+            final String[] strings = new String[1];
+
+            storageReference.child("Avatar").child(nameString).getDownloadUrl()
+                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            strings[0] = uri.toString();
+                            Log.d("16Oct61","url ==> " + strings[0]);
+                            insertValueToFirebase(uidString, strings[0]);
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("16Oct61","e Storage ==> " + e.toString());
+                }
+            });
+        }catch (Exception e){
+
+            Log.d("16Oct61","e ==> " + e.toString());
+
+        }
+
+    }
+
+    private void insertValueToFirebase(String uidString, String urlAvatarString) {
+
+        //Setter Value to Model
+        UserModel userModel = new UserModel(nameString,urlAvatarString);
+
+
+
     }
 
     @Override
