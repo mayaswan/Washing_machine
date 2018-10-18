@@ -1,6 +1,6 @@
 package com.example.ruchadapong.projectapp;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,7 +26,6 @@ public class MainFragment extends Fragment {
 //        Register Controller
         registerController();
 
-        checkLogin();
 
         loginController();
 
@@ -71,16 +70,6 @@ public class MainFragment extends Fragment {
 
     }
 
-    private void checkLogin() {
-
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() != null) {
-
-            moveToService();
-
-        }
-
-    }
 
     private void moveToService() {
 
