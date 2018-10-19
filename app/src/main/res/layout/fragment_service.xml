@@ -10,15 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_margin="30dp"
-            android:orientation="vertical"
+        <RelativeLayout
+            android:layout_margin="50dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
 
             <Button
                 android:id="@+id/btnConnect"
@@ -32,17 +28,27 @@
 
 
             <Button
-                android:id="@+id/btnSend"
+                android:id="@+id/btnOn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="38dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_number"
-                android:text="1" />
+                android:text="on" />
 
+            <Button
+                android:id="@+id/btnOff"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="193dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_number"
+                android:text="off" />
+        </RelativeLayout>
 
-        </LinearLayout>
-
-    </ScrollView>
 
 </RelativeLayout>
