@@ -15,24 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <Button
-                android:id="@+id/btnConnect"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="Select Your Bluetooth"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/btn_selectbluetooth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
             <Button
                 android:id="@+id/btnOn"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="57dp"
+                android:layout_height="55dp"
                 android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
                 android:layout_marginLeft="38dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_number"
@@ -40,14 +27,30 @@
 
             <Button
                 android:id="@+id/btnOff"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="57dp"
+                android:layout_height="55dp"
                 android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="193dp"
+                android:layout_marginLeft="222dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_number"
                 android:text="off" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Select Your Bluetooth"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/btn_selectbluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:id="@+id/list_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+
+
+
         </RelativeLayout>
 
 
