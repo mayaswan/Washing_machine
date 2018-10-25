@@ -9,15 +9,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.Set;
 
-public class ListDevice extends ListActivity {
+public class DeviceList extends ListActivity {
 
     private BluetoothAdapter bluetoothAdapter2 = null;
 
-    static String MAC_Adress = null;
+    static String MAC_Address = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,10 @@ public class ListDevice extends ListActivity {
 
         if (bluetoothDevices.size() > 0) {
 
-            for (BluetoothDevice divice : bluetoothDevices){
+            for (BluetoothDevice device : bluetoothDevices){
 
-                String name = divice.getName();
-                String MacAddress = divice.getAddress();
+                String name = device.getName();
+                String MacAddress = device.getAddress();
                 ArrayBluetooth.add(name + "/n" + MacAddress);
 
             }
@@ -50,10 +50,10 @@ public class ListDevice extends ListActivity {
         super.onListItemClick(l, v, position, id);
 
         String information = ((TextView)v).getText().toString();
-        String AddreasMac = information.substring(information.length() - 17);
+        String AddressMac = information.substring(information.length() - 17);
 
         Intent returnMac = new Intent();
-        returnMac.putExtra(MAC_Adress,AddreasMac);
+        returnMac.putExtra(MAC_Address,AddressMac);
         setResult(RESULT_OK,returnMac);
         finish();
 
