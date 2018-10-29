@@ -40,7 +40,7 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:text="Select Your Bluetooth"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="100dp"
                 android:background="@drawable/btn_selectbluetooth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -48,6 +48,157 @@
                 android:id="@+id/list_devices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></ListView>
+
+            <RelativeLayout
+                android:layout_marginTop="200dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/clear_big"
+                    android:layout_alignParentLeft="true" />
+
+                <Button
+                    android:id="@+id/numSeven"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_number"
+                    android:text="7"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numEigth"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginLeft="122dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_number"
+                    android:text="8"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numNine"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="213dp"
+                    android:layout_marginLeft="213dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_number"
+                    android:text="9"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numFour"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="133dp"
+                    android:background="@drawable/btn_number"
+                    android:text="4"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numFive"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="132dp"
+                    android:background="@drawable/btn_number"
+                    android:text="5"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numSix"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="211dp"
+                    android:layout_marginLeft="211dp"
+                    android:layout_marginTop="132dp"
+                    android:background="@drawable/btn_number"
+                    android:text="6"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numOne"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="221dp"
+                    android:background="@drawable/btn_number"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numTwo"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="220dp"
+                    android:background="@drawable/btn_number"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/numThree"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="213dp"
+                    android:layout_marginLeft="213dp"
+                    android:layout_marginTop="221dp"
+                    android:background="@drawable/btn_number"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
 
 
 

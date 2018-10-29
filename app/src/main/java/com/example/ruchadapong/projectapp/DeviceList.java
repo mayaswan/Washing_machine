@@ -35,7 +35,7 @@ public class DeviceList extends ListActivity {
 
                 String name = device.getName();
                 String MacAddress = device.getAddress();
-                ArrayBluetooth.add(name + "/n" + MacAddress);
+                ArrayBluetooth.add(name + "\n" + MacAddress);
 
             }
 
