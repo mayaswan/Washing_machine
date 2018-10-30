@@ -1,62 +1,48 @@
 package com.example.ruchadapong.projectapp;
 
-import android.app.ListActivity;
-import android.bluetooth.BluetoothAdapter;
+
 import android.bluetooth.BluetoothDevice;
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 
-import java.util.Set;
 
-public class DeviceList extends ListActivity {
+public class DeviceList extends ArrayAdapter<BluetoothDevice> {
 
-    private BluetoothAdapter bluetoothAdapter2 = null;
+    private LayoutInflater mLayoutInflater;
+    private ArrayList<BluetoothDevice> mDevices;
+    private int  mViewResourceId;
 
-    static String MAC_Address = null;
+    public DeviceList(Context context, int tvResourceId, ArrayList<BluetoothDevice> devices){
+        super(context, tvResourceId,devices);
+        this.mDevices = devices;
+        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mViewResourceId = tvResourceId;
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = mLayoutInflater.inflate(mViewResourceId, null);
 
-        ArrayAdapter<String> ArrayBluetooth = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        BluetoothDevice device = mDevices.get(position);
 
-       bluetoothAdapter2 = BluetoothAdapter.getDefaultAdapter();
+        if (device != null) {
+            TextView deviceName = (TextView) convertView.findViewById(R.id.tvDeviceName);
+            TextView deviceAdress = (TextView) convertView.findViewById(R.id.tvDeviceAddress);
 
-        Set<BluetoothDevice> bluetoothDevices = bluetoothAdapter2.getBondedDevices();
-
-        if (bluetoothDevices.size() > 0) {
-
-            for (BluetoothDevice device : bluetoothDevices){
-
-                String name = device.getName();
-                String MacAddress = device.getAddress();
-                ArrayBluetooth.add(name + "\n" + MacAddress);
-
+            if (deviceName != null) {
+                deviceName.setText(device.getName());
             }
-
+            if (deviceAdress != null) {
+                deviceAdress.setText(device.getAddress());
+            }
         }
-        setListAdapter(ArrayBluetooth);
 
-
+        return convertView;
     }
 
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        String information = ((TextView)v).getText().toString();
-        String AddressMac = information.substring(information.length() - 17);
-
-        Intent returnMac = new Intent();
-        returnMac.putExtra(MAC_Address,AddressMac);
-        setResult(RESULT_OK,returnMac);
-        finish();
-
-
-    }
 }
