@@ -15,45 +15,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnOnOff"
-                android:layout_width="100dp"
-                android:layout_height="55dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="39dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_number"
-                android:text="ON / OFF" />
-
-            <Button
-                android:id="@+id/btnDiscovery"
-                android:layout_width="100dp"
-                android:layout_height="55dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="179dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_number"
-                android:onClick="btnEnableDisable_Discoverable"
-                android:text="Discovery" />
-
-
 
 
             <Button
                 android:id="@+id/btnConnect"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Select Your Bluetooth"
+                android:text="Connect Bluetooth"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/btn_selectbluetooth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <ListView
 
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:id="@+id/lvNewDevices"/>
 
             <RelativeLayout
                 android:layout_marginTop="200dp"
