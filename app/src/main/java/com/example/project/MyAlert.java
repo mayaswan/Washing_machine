@@ -1,4 +1,4 @@
-package com.example.ruchadapong.projectapp;
+package com.example.project;
 
 import android.content.Context;
 import android.content.DialogInterface;

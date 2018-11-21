@@ -1,4 +1,4 @@
-package com.example.ruchadapong.projectapp;
+package com.example.project;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

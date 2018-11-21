@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "732498184836",
-    "firebase_url": "https://androidapp-eb2c0.firebaseio.com",
-    "project_id": "androidapp-eb2c0",
-    "storage_bucket": "androidapp-eb2c0.appspot.com"
+    "project_number": "161518621948",
+    "firebase_url": "https://fireb-3b720.firebaseio.com",
+    "project_id": "fireb-3b720",
+    "storage_bucket": "fireb-3b720.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:732498184836:android:7667e19e2d4a4d1d",
+        "mobilesdk_app_id": "1:161518621948:android:6fddbf0bc1b4e2c3",
         "android_client_info": {
-          "package_name": "com.example.ruchadapong.projectapp"
+          "package_name": "com.example.project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "732498184836-n3ji9cn8hk279jeugmjc1r0nm5p8fnp4.apps.googleusercontent.com",
+          "client_id": "161518621948-g7nvoq2e2qru12i2k06ftkscohllk66h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ruchadapong.projectapp",
-            "certificate_hash": "6b66c7afc2c7bd1b469a83f8de38e940d2b0d366"
+            "package_name": "com.example.project",
+            "certificate_hash": "f75dbe4b1ade0443f62240e01b5b6b0e0014a5a3"
           }
         },
         {
-          "client_id": "732498184836-ljl6d7t82k7u7i1kmc9e79hubharel7e.apps.googleusercontent.com",
+          "client_id": "161518621948-gopnpr1m3dn5ms0t9bo69kq9ncnvak8f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRUDuvW19-dVgJ3-q2cGR-hMKr1_Fg_4E"
+          "current_key": "AIzaSyD-LpWCC-_yPLLf9ULzf5WjBIR0Q_P7GL0"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "732498184836-ljl6d7t82k7u7i1kmc9e79hubharel7e.apps.googleusercontent.com",
+              "client_id": "161518621948-gopnpr1m3dn5ms0t9bo69kq9ncnvak8f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

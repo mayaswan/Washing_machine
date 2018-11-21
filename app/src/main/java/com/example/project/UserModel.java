@@ -1,4 +1,4 @@
-package com.example.ruchadapong.projectapp;
+package com.example.project;
 
 import android.os.Parcel;
 import android.os.Parcelable;
