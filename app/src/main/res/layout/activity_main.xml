@@ -8,7 +8,7 @@
 
     <ImageView
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_android"
+        android:background="@drawable/gradient"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

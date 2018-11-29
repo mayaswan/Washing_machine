@@ -6,70 +6,57 @@
 
     <!--Toolbar-->
     <android.support.v7.widget.Toolbar
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/toolbarRegister"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <!--Content-->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <ImageView
 
+        android:id="@+id/imgAvatar"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:src="@drawable/choose_image" />
 
-        <LinearLayout
-            android:layout_margin="30dp"
-            android:background="@drawable/clear_biger"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:hint=" ชื่อ - สกุล" />
+        <!--android:background="@drawable/field_name"-->
+        android:hint="Name :"
+        android:inputType="text" />
 
+    <!--android:background="@drawable/field_password"-->
+        android:hint="Password :"
+        android:inputType="textPassword" />
 
-            <!--Avatar-->
-            <ImageView
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:hint=" อีเมลล์" />
 
-                android:id="@+id/imgAvatar"
-                android:scaleType="centerInside"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/choose_image"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
-
-            <!--Name-->
-            <EditText
-                android:id="@+id/edtName"
-                android:inputType="text"
-                android:layout_marginTop="10dp"
-                android:hint="Name :"
-                android:background="@drawable/field_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <!--E-mail-->
-            <EditText
-                android:id="@+id/edtEmail"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="10dp"
-                android:hint="E-mail :"
-                android:background="@drawable/field_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <!--Password-->
-            <EditText
-                android:id="@+id/edtPassword"
-                android:layout_marginTop="10dp"
-                android:inputType="textPassword"
-                android:hint="Password :"
-                android:background="@drawable/field_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:hint=" รหัสผ่าน" />
+    <!--android:background="@drawable/field_name"-->
+        android:hint="E-mail :"
+        android:inputType="textEmailAddress" />
 </LinearLayout>

@@ -4,17 +4,6 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio/mayaswan/ProjectApp/Project" />
-        <option name="modules">
-          <set>
-            <option value="C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio/mayaswan/ProjectApp/Project" />
-            <option value="C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio/mayaswan/ProjectApp/Project/app" />
-          </set>
-        </option>
-        <option name="resolveModulePerSourceSet" value="false" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
